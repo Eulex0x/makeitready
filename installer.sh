@@ -27,12 +27,11 @@ make
 sudo cp bin/massdns /usr/local/bin/
 cd ..
 rm -rf massdns
-
 # Install Shuffledns
 echo "[*] Installing Shuffledns..."
 GO111MODULE=on go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
 sudo cp ~/go/bin/shuffledns /usr/local/bin/
-
+sudo apt install crunch
 # Confirm installation
 echo "[*] Verifying installation..."
 if command -v massdns &> /dev/null && command -v shuffledns &> /dev/null; then
